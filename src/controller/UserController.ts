@@ -29,7 +29,7 @@ class UserController {
 
     async update(request: Request, response: Response, next: NextFunction) {
         const id = parseInt(request.params.id)
-        console.log("Fetch one user router working");
+        console.log("Update user router working");
 
         const user_to_update = await this.userRepository.findOne({
             where: { id }
@@ -64,7 +64,7 @@ class UserController {
 
     async remove(request: Request, response: Response, next: NextFunction) {
         const id = parseInt(request.params.id)
-
+        console.log("Delete user router working");
         let userToRemove = await this.userRepository.findOneBy({ id })
 
         if (!userToRemove) {
